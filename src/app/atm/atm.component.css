@@ -1,0 +1,9 @@
+.atm-container {
+    width: 400px;
+  }
+  
+  .atm-mat-card-content {
+    background-image: url('/assets/images/blue-world-map.jpg');
+    background-size: cover;
+    height: 300px;
+  }

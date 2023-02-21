@@ -1,0 +1,10 @@
+.bounds {
+    background-color: #fafafa;
+    height: 900px;
+}
+
+.container {
+    min-width: 300px;
+    height: 800px;
+    /*height: 400px;*/
+}

@@ -1,0 +1,17 @@
+<div class="atm-container">
+    <mat-card>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center stretch" class="atm-mat-card-content">
+            <div fxLayout="row">
+                <div>
+                    <button mat-raised-button routerLink="/atm/withdraw" color="primary">withdraw</button>
+                </div>
+                <div>
+                    <button mat-raised-button routerLink="/atm/refill" color="primary">Refill</button>
+                </div>
+            </div>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
