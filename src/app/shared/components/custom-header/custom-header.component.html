@@ -2,16 +2,21 @@
     <mat-toolbar-row>
         <button mat-button routerLink="/atm" routerLinkActive="router-link-active">ATM</button>
         <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
-            <button mat-button routerLink="/overview" routerLinkActive="router-link-active">Overview</button>
+            <button mat-button routerLink="/overview/transactions" routerLinkActive="router-link-active">Transactions</button>
+            <button mat-button routerLink="/overview/details" routerLinkActive="router-link-active">Details</button>
         </div>
-        <button mat-icon-button aria-label="">
-            <mat-icon>profile</mat-icon>
+        <button *ngIf="!authService.isUserLoggedIn()" mat-icon-button aria-label="LogIn" (click)="logIn()">
+            <mat-icon>login</mat-icon>
+        </button>
+        <button *ngIf="authService.isUserLoggedIn()" mat-icon-button aria-label="LogOut" (click)="logOut()">
+            <mat-icon>logout</mat-icon>
         </button>
     </mat-toolbar-row>
 
     <mat-toolbar-row fxHide.gt-xs>
         <div fxFlex fxLayout fxLayoutAlign="flex-start">
-            <button mat-button routerLink="/overview" routerLinkActive="router-link-active">Overview</button>
+            <button mat-button routerLink="/overview/transactions" routerLinkActive="router-link-active">Transactions</button>
+            <button mat-button routerLink="/overview/details" routerLinkActive="router-link-active">Details</button>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>

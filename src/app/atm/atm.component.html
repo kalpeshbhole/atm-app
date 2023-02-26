@@ -1,17 +1,20 @@
 <div class="atm-container">
     <mat-card>
-        <mat-card-content fxLayout="column" fxLayoutAlign="center stretch" class="atm-mat-card-content">
-            <div fxLayout="row">
-                <div>
-                    <button mat-raised-button routerLink="/atm/withdraw" color="primary">withdraw</button>
+        <mat-card-content class="atm-mat-card-content">
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+                <div *ngIf="!isActionTaken" fxLayout="row" fxLayoutAlign="space-around" fxFlex="100%">
+                    <div>
+                        <button mat-raised-button (click)="actionTaken()" routerLink="/atm/withdraw" color="primary">withdraw</button>
+                    </div>
+                    <div>
+                        <button mat-raised-button (click)="actionTaken()" routerLink="/atm/restock" color="primary">Refill</button>
+                    </div>
                 </div>
-                <div>
-                    <button mat-raised-button routerLink="/atm/refill" color="primary">Refill</button>
+                <div *ngIf="isActionTaken" fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+                    <router-outlet></router-outlet>
                 </div>
-            </div>
-            <div>
-                <router-outlet></router-outlet>
             </div>
         </mat-card-content>
     </mat-card>
+    
 </div>

@@ -1,9 +1,13 @@
 .atm-container {
-    width: 400px;
-  }
-  
-  .atm-mat-card-content {
-    background-image: url('/assets/images/blue-world-map.jpg');
-    background-size: cover;
-    height: 300px;
-  }
+  min-width: 550px;
+}
+
+.atm-container-xs {
+  min-width: 400px;
+}
+
+.atm-mat-card-content {
+  background-image: url('/assets/images/world-map.jpg');
+  background-size: cover;
+  height: 350px;
+}

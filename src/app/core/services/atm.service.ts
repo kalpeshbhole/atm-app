@@ -10,7 +10,11 @@ export class AtmService {
 
   constructor(private httpClient: HttpClient) { }
 
-  postRefill(atm: Atm){
+  getAtm(){
+    return this.httpClient.get<Atm>(`${APIs.Atm}/details`);
+  }
+
+  postRestock(atm: Atm){
     return this.httpClient.post<Atm>(`${APIs.Atm}/refill`, atm);
   }
 

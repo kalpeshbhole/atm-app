@@ -1,0 +1,8 @@
+<!-- {{transaction?.id}}
+{{transaction?.accountId}}
+{{TransactionType[transaction?.type || 0]}}
+{{transaction?.amount | currency:'USD':'symbol'}}
+{{TransactionStatus[transaction?.status || 0]}}
+{{transaction?.createDate | date :'medium'}} -->
+
+{{transaction | json}}

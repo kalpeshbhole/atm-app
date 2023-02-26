@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 export class NotificationService {
 
   Toast = Swal.mixin({
-    timer: 2000
+    timer: 5000
   });
 
   constructor() { }
