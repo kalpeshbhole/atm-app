@@ -19,4 +19,11 @@ export class AccountService {
     return this.httpClient.get<Account>(`${APIs.Account}/${id}`);
   }
 
+  getBalanceByAccountId(id: number) {
+    return this.httpClient.get<number>(`${APIs.Account}/${id}/balance`);
+  }
+
+  updatePin(id: number, pin: number) {
+    return this.httpClient.put(`${APIs.Account}`, { id: id, pin: pin });
+  }
 }

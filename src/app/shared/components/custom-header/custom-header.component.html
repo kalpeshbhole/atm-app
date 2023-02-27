@@ -1,7 +1,9 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-button routerLink="/atm" routerLinkActive="router-link-active">ATM</button>
-        <div fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>
+        <div *ngIf="!authService.isUserLoggedIn()" fxFlex fxLayout fxLayoutAlign="flex-start">
+            <button mat-button routerLink="/atm" routerLinkActive="router-link-active">ATM</button>
+        </div>
+        <div *ngIf="authService.isUserLoggedIn()" fxFlex fxLayout fxLayoutAlign="flex-start">
             <button mat-button routerLink="/overview/transactions" routerLinkActive="router-link-active">Transactions</button>
             <button mat-button routerLink="/overview/details" routerLinkActive="router-link-active">Details</button>
         </div>
@@ -11,12 +13,5 @@
         <button *ngIf="authService.isUserLoggedIn()" mat-icon-button aria-label="LogOut" (click)="logOut()">
             <mat-icon>logout</mat-icon>
         </button>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row fxHide.gt-xs>
-        <div fxFlex fxLayout fxLayoutAlign="flex-start">
-            <button mat-button routerLink="/overview/transactions" routerLinkActive="router-link-active">Transactions</button>
-            <button mat-button routerLink="/overview/details" routerLinkActive="router-link-active">Details</button>
-        </div>
     </mat-toolbar-row>
 </mat-toolbar>

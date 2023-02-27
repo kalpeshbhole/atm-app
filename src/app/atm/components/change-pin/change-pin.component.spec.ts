@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RestockComponent } from './restock.component';
+import { ChangePinComponent } from './change-pin.component';
 
-describe('RestockComponent', () => {
-  let component: RestockComponent;
-  let fixture: ComponentFixture<RestockComponent>;
+describe('ChangePinComponent', () => {
+  let component: ChangePinComponent;
+  let fixture: ComponentFixture<ChangePinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RestockComponent ]
+      declarations: [ ChangePinComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RestockComponent);
+    fixture = TestBed.createComponent(ChangePinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

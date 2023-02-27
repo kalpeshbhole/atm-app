@@ -1,20 +1,23 @@
-<div class="atm-container">
-    <mat-card>
-        <mat-card-content class="atm-mat-card-content">
-            <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
-                <div *ngIf="!isActionTaken" fxLayout="row" fxLayoutAlign="space-around" fxFlex="100%">
-                    <div>
-                        <button mat-raised-button (click)="actionTaken()" routerLink="/atm/withdraw" color="primary">withdraw</button>
-                    </div>
-                    <div>
-                        <button mat-raised-button (click)="actionTaken()" routerLink="/atm/restock" color="primary">Refill</button>
-                    </div>
-                </div>
-                <div *ngIf="isActionTaken" fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
-        </mat-card-content>
-    </mat-card>
-    
+<div *ngIf="!isActionTaken">
+    <div fxLayout="row" class="atm-container" fxLayoutAlign="center center" fxFlex="100%">
+        <div>
+            <button mat-raised-button (click)="actionTaken()" routerLink="/atm/change-pin" color="primary">
+                Change Pin
+            </button>
+            <button [disabled]="true" mat-raised-button (click)="actionTaken()" routerLink="/atm/last-transaction" color="primary">
+                Last Transaction
+            </button>
+        </div>
+        <div>
+            <button mat-raised-button (click)="actionTaken()" routerLink="/atm/withdraw" color="primary">
+                Withdraw
+            </button>
+            <button mat-raised-button (click)="actionTaken()" routerLink="/atm/check-balance" color="primary">
+                Check Balance
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="isActionTaken">
+    <router-outlet></router-outlet>
 </div>

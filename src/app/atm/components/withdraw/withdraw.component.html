@@ -1,24 +1,4 @@
-<div *ngIf="!validated" [formGroup]="validateForm" fxLayout="column" fxLayoutAlign="center center">
-    <mat-form-field appearance="fill">
-        <mat-label>Card Number</mat-label>
-        <input matInput type="number" formControlName="cardNumber" />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Pin</mat-label>
-        <input matInput type="password" formControlName="pin" />
-    </mat-form-field>
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div>
-            <button mat-raised-button [disabled]="!validateForm.valid" (click)="validate()"
-                color="primary">Next</button>
-        </div>
-        <div>
-            <button mat-stroked-button (click)="cancelWithdraw()" color="warn">Cancel</button>
-        </div>
-    </div>
-</div>
-
-<div *ngIf="validated" [formGroup]="withdrawForm" fxLayout="column" fxLayoutAlign="center center">
+<div [formGroup]="withdrawForm" fxLayout="column" fxLayoutAlign="center center">
     <mat-form-field appearance="fill">
         <mat-label>Amount</mat-label>
         <input matInput type="number" formControlName="amount" placeholder="0" />

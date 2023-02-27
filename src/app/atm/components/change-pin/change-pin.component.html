@@ -1,0 +1,16 @@
+<div [formGroup]="changePinForm" fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field appearance="fill">
+        <mat-label>New Pin</mat-label>
+        <input matInput type="password" formControlName="pin" />
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div>
+            <button [disabled]="!changePinForm.valid" mat-raised-button (click)="changePin()" color="primary">
+                Submit
+            </button>
+        </div>
+        <div>
+            <button mat-stroked-button (click)="cancelChangePin()" color="warn">Cancel</button>
+        </div>
+    </div>
+</div>

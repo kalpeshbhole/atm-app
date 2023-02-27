@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RefillComponent } from './refill.component';
+import { ValidatePinComponent } from './validate-pin.component';
 
-describe('RefillComponent', () => {
-  let component: RefillComponent;
-  let fixture: ComponentFixture<RefillComponent>;
+describe('ValidatePinComponent', () => {
+  let component: ValidatePinComponent;
+  let fixture: ComponentFixture<ValidatePinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RefillComponent ]
+      declarations: [ ValidatePinComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RefillComponent);
+    fixture = TestBed.createComponent(ValidatePinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,13 +1,7 @@
 .atm-container {
-  min-width: 550px;
-}
-
-.atm-container-xs {
-  min-width: 400px;
-}
-
-.atm-mat-card-content {
+  width: 400px;
+  min-height: 240px;
   background-image: url('/assets/images/world-map.jpg');
-  background-size: cover;
-  height: 350px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }

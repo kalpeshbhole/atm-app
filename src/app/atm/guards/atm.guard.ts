@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, CanLoad, CanMatch, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '../services';
+import { AtmModuleService } from '../services';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad, CanMatch {
-
-  constructor(private router: Router, private authService: AuthService) { }
+export class AtmGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad, CanMatch {
+  
+  constructor(private router: Router, private atmModuleService: AtmModuleService) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const isUserLoggedIn = this.authService.isUserLoggedIn();
-    if (!isUserLoggedIn) {
-      this.router.navigate(["/auth/login"]);
-    }
-    return isUserLoggedIn;
+      const isValidated = this.atmModuleService.isValidated();
+      if(!isValidated) {
+      this.router.navigate(["/atm/validate-pin"]);
+      }
+    return isValidated;
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.authService.isUserLoggedIn();
+    return true;
   }
   canDeactivate(
     component: unknown,
@@ -35,7 +35,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
-  } canLoad(
+  }canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
