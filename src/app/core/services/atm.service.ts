@@ -15,7 +15,7 @@ export class AtmService {
   }
 
   postRestock(restock: Restock){
-    return this.httpClient.post<Atm>(`${APIs.Atm}/refill`, restock);
+    return this.httpClient.post<Atm>(`${APIs.Atm}/restock`, restock);
   }
 
   postWithdraw(accountId: number, amount: number){
