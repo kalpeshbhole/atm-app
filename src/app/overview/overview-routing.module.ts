@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@auth/guards';
 import { TransactionResolver } from '@core/resolvers';
-import { AtmDetailsComponent } from './components/atm-details/atm-details.component';
-import { TransactionDetailsComponent } from './components/transaction-details/transaction-details.component';
-import { TransactionsComponent } from './components/transactions/transactions.component';
+import {
+  AtmDetailsComponent, RestockComponent,
+  TransactionDetailsComponent, TransactionsComponent
+} from './components';
 import { OverviewComponent } from './overview.component';
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
           }
         ]
       },
-      { path: 'details', component: AtmDetailsComponent }
+      { path: 'details', component: AtmDetailsComponent },
+      { path: 'restock', component: RestockComponent }
     ]
   },
 ];

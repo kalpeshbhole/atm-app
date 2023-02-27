@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@auth/services';
 
 @Component({
   selector: 'app-not-found',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class NotFoundComponent {
 
+  constructor(private router : Router, private authService: AuthService){}
+
+  gotoHome(){
+    if(this.authService.isUserLoggedIn()) {
+      this.router.navigate(['overview/transactions']);
+    } else {
+      this.router.navigate(['atm']);
+    }
+  }
 }

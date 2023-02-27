@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Restock</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div [formGroup]="restockForm" fxLayout="column" fxLayoutAlign="center center">
+            <div formGroupName="currency">
+                $1: <app-quantity [increment]="1" formControlName="$1"></app-quantity>
+                $15: <app-quantity [increment]="1" formControlName="$5"></app-quantity>
+                $10: <app-quantity [increment]="1" formControlName="$10"></app-quantity>
+                $20: <app-quantity [increment]="1" formControlName="$20"></app-quantity>
+                $50: <app-quantity [increment]="1" formControlName="$50"></app-quantity>
+                $100: <app-quantity [increment]="1" formControlName="$100"></app-quantity>
+            </div>
+        </div>
+        <div>
+            <button [disabled]="!restockForm.valid" mat-raised-button (click)="restock()"
+                color="primary">Submit</button>
+        </div>
+    </mat-card-content>
+</mat-card>

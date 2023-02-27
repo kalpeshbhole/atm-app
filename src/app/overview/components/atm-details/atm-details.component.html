@@ -1,1 +1,18 @@
-<p>atm-details works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{atm?.bank?.name}}</mat-card-title>
+        <mat-card-subtitle>
+            {{atm?.address?.line1}}, {{atm?.address?.line2}}, {{atm?.address?.line3}},<br>
+            {{atm?.address?.line4}}, {{atm?.address?.line5}},<br>
+            {{atm?.address?.city}}, {{atm?.address?.state}}, {{atm?.address?.zipCode}},<br>
+            {{atm?.address?.country}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-chip-listbox aria-label="Currency Available">
+            <mat-chip *ngFor="let property of atm?.currency | keyvalue">
+                {{property.key}}: {{property.value}}
+            </mat-chip>
+          </mat-chip-listbox>
+    </mat-card-content>
+</mat-card>

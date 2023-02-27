@@ -1,6 +1,10 @@
+import { Address } from "./address";
+import { Bank } from "./bank";
+
 export interface Atm {
     id: number;
-    bankName: string;
+    bank: Bank;
+    address: Address,
     currency: {
         $100: number,
         $50: number,

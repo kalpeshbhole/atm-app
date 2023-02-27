@@ -13,7 +13,7 @@ import { AtmModuleService } from '../../services';
 export class WithdrawComponent {
 
   withdrawForm = this.fb.group({
-    accountId: [this.atmModuleService.getAccountId(), Validators.required],
+    accountId: [this.atmModuleService.getAccountId(), Validators.required, Validators.min(1)],
     amount: ['', Validators.required],
   });
 

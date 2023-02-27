@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { APIs } from '@core/constants';
-import { Account, Atm } from '@core/models';
+import { Account, Atm, Restock } from '@core/models';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class AtmService {
     return this.httpClient.get<Atm>(`${APIs.Atm}/details`);
   }
 
-  postRestock(atm: Atm){
-    return this.httpClient.post<Atm>(`${APIs.Atm}/refill`, atm);
+  postRestock(restock: Restock){
+    return this.httpClient.post<Atm>(`${APIs.Atm}/refill`, restock);
   }
 
   postWithdraw(accountId: number, amount: number){

@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
-import { TransactionsComponent } from './components/transactions/transactions.component';
-import { AtmDetailsComponent } from './components/atm-details/atm-details.component';
-import { TransactionDetailsComponent } from './components/transaction-details/transaction-details.component';
+
 import { SharedModule } from '@shared/shared.module';
+import { AtmDetailsComponent, RestockComponent, TransactionDetailsComponent, TransactionsComponent } from './components';
+
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { SharedModule } from '@shared/shared.module';
     OverviewComponent,
     TransactionsComponent,
     AtmDetailsComponent,
-    TransactionDetailsComponent
+    TransactionDetailsComponent,
+    RestockComponent
   ],
   imports: [
     CommonModule,

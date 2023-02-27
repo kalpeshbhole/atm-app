@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Atm } from '@core/models';
 import { AtmService } from '@core/services';
 
 @Component({
@@ -7,10 +8,12 @@ import { AtmService } from '@core/services';
   styleUrls: ['./atm-details.component.css']
 })
 export class AtmDetailsComponent {
+  atm: Atm | undefined;
 
   constructor(private atmService: AtmService) {
     this.atmService.getAtm().subscribe(atm => {
       console.log(atm);
+      this.atm = atm;
     });
   }
 }
