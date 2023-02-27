@@ -13,12 +13,14 @@ import { AtmModuleService } from '../../services';
 export class WithdrawComponent {
 
   withdrawForm = this.fb.group({
-    accountId: [this.atmModuleService.getAccountId(), Validators.required, Validators.min(1)],
+    accountId: [0, Validators.required],
     amount: ['', Validators.required],
   });
 
   constructor(private fb: FormBuilder, private router: Router, private atmModuleService: AtmModuleService,
-    private atmService: AtmService, private notificationService: NotificationService) { }
+    private atmService: AtmService, private notificationService: NotificationService) {
+     this.withdrawForm.get('accountId')?.setValue(this.atmModuleService.getAccountId());
+     }
 
   withdraw() {
     if (!this.withdrawForm.valid) {

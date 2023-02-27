@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
-import { CustomHeaderComponent, NotFoundComponent, QuantityComponent } from './components';
+import { CustomHeaderComponent, LoaderComponent, NotFoundComponent, QuantityComponent } from './components';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -19,12 +19,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     ReactiveFormsModule,
     CustomHeaderComponent,
-    QuantityComponent
+    QuantityComponent,
+    LoaderComponent
   ],
   declarations: [
     CustomHeaderComponent,
     NotFoundComponent,
-    QuantityComponent
+    QuantityComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule { }

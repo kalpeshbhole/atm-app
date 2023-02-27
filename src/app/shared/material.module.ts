@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSelectModule,
     MatTableModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatToolbarModule,
@@ -36,7 +38,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSelectModule,
     MatTableModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule {}

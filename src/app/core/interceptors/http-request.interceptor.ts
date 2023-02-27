@@ -5,19 +5,25 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { finalize, Observable } from 'rxjs';
+import { LoaderService } from '@shared/services';
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private loaderService: LoaderService) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    this.loaderService.show();
+    
     request = request.clone({
       headers: request.headers.set(
-          "ngrok-skip-browser-warning",'true'
+        "ngrok-skip-browser-warning", 'true'
       ),
-  });
-    return next.handle(request);
+    });
+
+    return next.handle(request).pipe(
+      finalize(() => this.loaderService.hide()),
+    );
   }
 }
